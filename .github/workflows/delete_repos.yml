@@ -1,4 +1,4 @@
-name: Delete Repositories
+name: Delete Organization Repositories
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main  # Run the workflow on pushes to the main branch
 
 jobs:
-  delete_repos:
+  delete_org_repos:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,6 +22,7 @@ jobs:
         run: |
           echo "MY_USERNAME=${{ secrets.MY_USERNAME }}" >> $GITHUB_ENV
           echo "MY_TOKEN=${{ secrets.MY_TOKEN }}" >> $GITHUB_ENV
+          echo "MY_ORG=${{ secrets.MY_ORG }}" >> $GITHUB_ENV
 
-      - name: Run delete_repos.sh
-        run: bash delete_repos.sh
+      - name: Run delete_org_repos.sh
+        run: bash delete_org_repos.sh
