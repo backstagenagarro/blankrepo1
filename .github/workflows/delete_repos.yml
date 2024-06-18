@@ -25,4 +25,4 @@ jobs:
           echo "MY_ORG=${{ secrets.MY_ORG }}" >> $GITHUB_ENV
 
       - name: Run delete_org_repos.sh
-        run: bash delete_org_repos.sh
+        run: bash delete_repos.sh
